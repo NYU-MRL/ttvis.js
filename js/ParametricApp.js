@@ -15,6 +15,7 @@ var keyPressed = [];
 var exporter = {};
 
 var testObject = null;
+var barVisualizer = null;
 
 var spotLight;
 var roomSpotLight;
@@ -148,7 +149,12 @@ function populateScene()
     testObject.init();
     // testObject.rotation.x = Math.PI/2;
     // testObject.position.set(0, 80, 500);
-    scene.add(testObject);
+    // scene.add(testObject);
+
+
+    barVisualizer = new InformTable();
+    barVisualizer.init();
+    scene.add(barVisualizer);
 
     // videoScreen = new VideoScreen();
     // videoScreen.init();
@@ -227,6 +233,7 @@ function run()
 
             testObject.update(1.0/60.0);
 
+            barVisualizer.applyHeights(ttForce);
             // debug forces
             // for (var i=0; i<ttForce.length; i++) {
             //     if (ttForce[i] > 0.1) {

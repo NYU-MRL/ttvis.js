@@ -397,7 +397,7 @@ function ttTick() {
 
 		if (tt.myState.hmd.present == true) {
 			for (var i = 0 ; i < tt.myState.hmd.forces.length ; i++) {
-				ttForce[i] = tt.myState.hmd.forces[i];
+				ttForce[i] = tt.myState.hmd.forces[i] / 4096;
 			}
 		}
 		else {
